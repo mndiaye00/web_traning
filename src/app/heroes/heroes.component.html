@@ -28,6 +28,17 @@
     </button>
 </div>
 
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput 
+            placeholder="Name of new hero"
+            #newHero
+            (keyup.enter)="addHero(newHero.value); newHero.value='' " />
+    </mat-form-field>
+    <button mat-button
+            (click)="addHero(newHero.value); newHero.value='' ">Add new hero</button>
+</form>  
+
 <ul class="heroes">
     <li *ngFor="let hero of heroes">
         <a routerLink="/detail/{{hero.id}}">
