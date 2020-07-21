@@ -21,6 +21,11 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule} from '@angular/material/checkbox';
+import { TableMaterialComponent } from './table-material/table-material.component';
+import {MatTableModule} from '@angular/material/table';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,9 @@ import {MatInputModule} from '@angular/material/input';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    TableMaterialComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,10 @@ import {MatInputModule} from '@angular/material/input';
     MatSliderModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule,
+    MatCardModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

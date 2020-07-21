@@ -17,6 +17,11 @@ export class HeroesComponent implements OnInit {
 
   hero: Hero = {id:1, name:"Dan Cusson"}
   heroes : Hero[] = null;
+  salade: false;
+  lasagne: false;
+  taous: false;
+  values: string;
+  choice: string;
 
   constructor(
     private heroService: HeroService
@@ -24,6 +29,10 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHeroes();
+  }
+
+  onChecked(event){
+    this.values = event.source.focus();
   }
 
   getHeroes(): void{
