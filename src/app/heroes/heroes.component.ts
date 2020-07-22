@@ -3,12 +3,14 @@
 import { Component, OnInit } from '@angular/core';
 
 import{Hero} from '../hero';
+import { DeleteConfirmationComponent } from '../delete-confirmation/delete-confirmation.component';
 import {HeroService} from '../hero.service';
 import { Observable } from 'rxjs';
 import { MessageService } from '../message.service';
 
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -29,7 +31,8 @@ export class HeroesComponent implements OnInit {
   constructor(
     private heroService: HeroService,
     iconRegistry: MatIconRegistry,
-    sanitizer: DomSanitizer
+    sanitizer: DomSanitizer,
+    private dialog: MatDialog
   ) { 
     iconRegistry.addSvgIcon(
       'delete-icon',
@@ -62,6 +65,23 @@ export class HeroesComponent implements OnInit {
   delete(hero: Hero):void{
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();
+  }
+
+  deleteHeroConfirm(hero: Hero){
+    const dialogRef = this.dialog.open(DeleteConfirmationComponent);
+
+    dialogRef.afterClosed().subscribe(confirmResult => {
+      console.log(`confirmResult = ${confirmResult}`);
+
+      // If dialog result is YES, delete hero...
+      if(confirmResult){
+        this.delete(hero);
+        console.log("Delete confirm is approved by user");
+      }
+      else{ // If dialog result is No, do not delete hero
+        console.log("Delete confirm is cancelled by user");
+      }
+    })
   }
 
 }

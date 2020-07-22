@@ -26,9 +26,11 @@ import { MatCheckboxModule} from '@angular/material/checkbox';
 import { TableMaterialComponent } from './table-material/table-material.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { CustomerComponent } from './customer/customer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DeleteConfirmationComponent } from './delete-confirmation/delete-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     DashboardComponent,
     HeroSearchComponent,
     TableMaterialComponent,
-    CustomerComponent
+    CustomerComponent,
+    DeleteConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatCardModule,
     MatTableModule,
     FontAwesomeModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
