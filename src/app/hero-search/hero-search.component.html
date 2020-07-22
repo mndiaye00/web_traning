@@ -1,12 +1,20 @@
 
 
 <div id="search-component">
-    <h4>
+    <!-- <h4>
         <label for="search-box">Hero Search: </label>
     </h4>
     <input #searchBox 
             id="search-box"
-            (input)="search(searchBox.value)" />
+            (input)="search(searchBox.value)" /> -->
+
+    <mat-form-field>
+        <!-- <mat-icon matPrefix>search</mat-icon> -->
+        <input matInput type="search" placeholder="Search hero" class="search-input"
+                #searchBox 
+                id="search-box"
+                (input)="search(searchBox.value)">
+    </mat-form-field>
 
     <ul class="search-result">
         <li *ngFor="let hero of heroes$ | async">

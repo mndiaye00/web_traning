@@ -25,7 +25,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { TableMaterialComponent } from './table-material/table-material.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+
 import { CustomerComponent } from './customer/customer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,9 @@ import { CustomerComponent } from './customer/customer.component';
     MatInputModule,
     MatCheckboxModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    FontAwesomeModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

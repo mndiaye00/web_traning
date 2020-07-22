@@ -7,6 +7,9 @@ import {HeroService} from '../hero.service';
 import { Observable } from 'rxjs';
 import { MessageService } from '../message.service';
 
+import {DomSanitizer} from '@angular/platform-browser';
+import {MatIconRegistry} from '@angular/material/icon';
+
 
 @Component({
   selector: 'app-heroes',
@@ -24,8 +27,14 @@ export class HeroesComponent implements OnInit {
   choice: string;
 
   constructor(
-    private heroService: HeroService
-  ) { }
+    private heroService: HeroService,
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer
+  ) { 
+    iconRegistry.addSvgIcon(
+      'delete-icon',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/examples/delete_icon.jpg'));
+  }
 
   ngOnInit(): void {
     this.getHeroes();
