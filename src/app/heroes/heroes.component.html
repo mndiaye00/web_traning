@@ -1,22 +1,6 @@
 
 
 
-<!-- <h3>{{hero.name | lowercase}} details</h3>
-<div>
-    <span>id:</span>
-    {{hero.id}}
-</div>
-<div>
-    <span>name:</span>
-    {{hero.name}}
-</div>
-
-<div>
-    <label>Name:
-        <input type="text" [(ngModel)]="hero.name" placeholder="name of hero" />
-    </label>
-</div> -->
-
 <h2>My heroes</h2>
 
 <div>
@@ -37,24 +21,6 @@
     </mat-form-field>
     <button mat-button
             (click)="addHero(newHero.value); newHero.value='' ">Add new hero</button>
-
-    <mat-card>
-        <mat-card-content>
-            <h2 class="example-h2">Favorite food</h2>
-            <section class="example-section">
-                <mat-checkbox class="example-margin" 
-                                [(ngModel)]="salade" 
-                                (change)="onChecked($event)">Salade</mat-checkbox>
-                <mat-checkbox class="example-margin" 
-                                [(ngModel)]="lasagne" 
-                                (change)="onChecked($event)">Lasagne</mat-checkbox>
-                <mat-checkbox class="example-margin" 
-                                [(ngModel)]="taous" 
-                                (change)="onChecked($event)">Taous</mat-checkbox>
-            </section>
-            <p>Your choice(s) is/are : {{values}}</p>
-        </mat-card-content>
-    </mat-card>
     
 </form>  
 
